@@ -10,7 +10,7 @@ h1 {
 }
 
 textarea, input {
-    width: 900px;
+    width: 100%;
 }
 
 footer {
@@ -31,33 +31,29 @@ article {
 }
 
 #mainheader {
-    display: flex;
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+    display: grid;
+    grid-template-rows: auto auto;
 }
 
 #mynameheader {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
     background-color: #303b61;
     color: #d6d6d6;
-    width: 225px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    text-align: center;
 }
 
 #navbar {
-    display: flex;
-    background-color: white;
+    grid-row-start: 2;
+    grid-column-start: 1;
     color: #3d3d3d;
-    margin-left: 420px;
+    text-align: center;
 }
 
 #navbar ul {
     padding: 0;
     list-style: none;
-    align-self: flex-end;
 }
 
 #navbar li {
@@ -68,8 +64,7 @@ article {
 #navbar a:link {
     color: #3d3d3d;
     text-decoration: none;
-    padding-right: 4px;
-    padding-left: 30px;
+    padding: 0 15px;
 }
 
 #navbar a:hover {
@@ -88,7 +83,7 @@ article {
 
 .content {
     min-height: calc(100vh - 203px);
-    padding-top: 40px;
+    padding-top: 10px;
     background-image: url('../images/dark-honeycomb.png');
     background-color: #d4d4d4;
     background-repeat: repeat;
@@ -97,9 +92,6 @@ article {
 .mainbody {
     display: block;
     background-color: white;
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -133,3 +125,88 @@ article {
     padding-top: 15px;
     height: 40px;
 }
+
+
+@media screen and (max-width: 640px) {
+    .mainbody {
+        margin: 0 10px;
+    }
+  }
+
+@media screen and (min-width: 640px) {
+    .mainbody {
+        margin: 0 10px;
+    }
+
+    #mainheader {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: 0 10px;
+    }
+
+    #mynameheader {
+        background-color: #303b61;
+        color: #d6d6d6;
+        width: 225px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    
+    #navbar {
+        color: #3d3d3d;
+        text-align: right;
+        padding-top: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mainbody {
+        width: 738px;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .mainbody {
+        width: 768px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    #mainheader {
+        margin: 0 20px;
+
+    }
+
+}
+
+
+/* #mainheader {
+    display: grid;
+    grid-template-rows: auto auto;
+    margin: 0 10px;
+}
+
+#mynameheader {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    background-color: #303b61;
+    color: #d6d6d6;
+    width: 225px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#navbar {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    color: #3d3d3d;
+    text-align: center;
+} */
